@@ -1,4 +1,4 @@
-export const cattle = [
+export const cows = [
   {
     id: 1,
     type: 'Negro',
@@ -109,23 +109,23 @@ export const expenses = [
 export const users = [
   {
     id: 1,
-    role: 'admin',
     name: 'Alejandro Chavez',
     email: 'alejandro@gmal.com',
-    password: '123456'
+    password: '123456',
+    role: 'admin'
   },
   {
     id: 2,
-    role: 'user',
     name: 'Rafael Torrealba',
     email: 'rafael@gmal.com',
-    password: '123456'
+    password: '123456',
+    role: 'user'
   },
   {
     id: 3,
-    role: 'user',
     name: 'Pedro Lopez',
     email: 'pedro@gmal.com',
-    password: '123456'
+    password: '123456',
+    role: 'user'
   }
 ]

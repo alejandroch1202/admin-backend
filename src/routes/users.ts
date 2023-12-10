@@ -1,7 +1,9 @@
 import { Router } from 'express'
-import { list } from './../controllers/users'
+import { create, list } from './../controllers/users'
 
 const router = Router()
+
+router.post('/', create)
 
 router.get('/', list)
 

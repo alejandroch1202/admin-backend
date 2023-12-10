@@ -1,7 +1,7 @@
 import { Router } from 'express'
 import type { Express } from 'express'
 import users from './users'
-import cattle from './cattle'
+import cows from './cows'
 import expenses from './expenses'
 
 const router = (app: Express) => {
@@ -11,7 +11,7 @@ const router = (app: Express) => {
 
   router.use('/users', users)
 
-  router.use('/cattle', cattle)
+  router.use('/cows', cows)
 
   router.use('/expenses', expenses)
 }

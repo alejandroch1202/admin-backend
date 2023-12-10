@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { create, list, find } from './../controllers/cattle'
+import { create, list, find } from '../controllers/cows'
 
 const router = Router()
 
