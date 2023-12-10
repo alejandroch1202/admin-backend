@@ -1,18 +1,19 @@
 import { Router } from 'express'
 import type { Express } from 'express'
+import users from './users'
+import cattle from './cattle'
+import expenses from './expenses'
 
-const router = (app: Express): void => {
+const router = (app: Express) => {
   const router = Router()
 
   app.use('/api/v1', router)
 
-  router.get('/users', (req, res) => {
-    res.json({ ok: true, message: 'users' })
-  })
+  router.use('/users', users)
 
-  router.get('/categories', (req, res) => {
-    res.json({ ok: true, message: 'categories' })
-  })
+  router.use('/cattle', cattle)
+
+  router.use('/expenses', expenses)
 }
 
 export default router
