@@ -1,85 +1,85 @@
 export const cattle = [
   {
     id: 1,
-    type: 'negro',
+    type: 'Negro',
     purchase_weight: 242,
     purchase_price: 1.25
   },
   {
     id: 2,
-    type: 'negro',
+    type: 'Negro',
     purchase_weight: 220,
     purchase_price: 1.3
   },
   {
-    type: 'negro',
     id: 3,
+    type: 'Negro',
     purchase_weight: 195,
     purchase_price: 1.25
   },
   {
-    type: 'negro',
     id: 4,
+    type: 'Negro',
     purchase_weight: 200,
     purchase_price: 1.25
   },
   {
-    type: 'negro',
     id: 5,
+    type: 'Negro',
     purchase_weight: 280,
     purchase_price: 1.3
   },
   {
-    type: 'negro',
     id: 6,
+    type: 'Negro',
     purchase_weight: 195,
     purchase_price: 1.25
   },
   {
-    type: 'negro',
     id: 7,
+    type: 'Negro',
     purchase_weight: 350,
     purchase_price: 1.25
   },
   {
-    type: 'rojo',
     id: 8,
+    type: 'Rojo',
     purchase_weight: 302,
     purchase_price: 1.25
   },
   {
-    type: 'rojo',
     id: 9,
+    type: 'Rojo',
     purchase_weight: 217,
     purchase_price: 1.3
   },
   {
-    type: 'rojo',
     id: 10,
+    type: 'Rojo',
     purchase_weight: 186,
     purchase_price: 1.25
   },
   {
-    type: 'rojo',
     id: 11,
+    type: 'Rojo',
     purchase_weight: 198,
     purchase_price: 1.3
   },
   {
-    type: 'rojo',
     id: 12,
+    type: 'Rojo',
     purchase_weight: 253,
     purchase_price: 1.25
   },
   {
-    type: 'rojo',
     id: 13,
+    type: 'Rojo',
     purchase_weight: 260,
     purchase_price: 1.28
   },
   {
-    type: 'rojo',
     id: 14,
+    type: 'Rojo',
     purchase_weight: 300,
     purchase_price: 1.28
   }
@@ -89,19 +89,19 @@ export const expenses = [
   {
     id: 1,
     name: 'Recarga',
-    type: 'gas',
+    type: 'Gasolina',
     amount: 20
   },
   {
     id: 2,
     name: 'Revisión del sistema de agua',
-    type: 'other',
+    type: 'Otros',
     amount: 40
   },
   {
     id: 3,
     name: 'Reparación del sistema de agua',
-    type: 'other',
+    type: 'Otros',
     amount: 40
   }
 ]
