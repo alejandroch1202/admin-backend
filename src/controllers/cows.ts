@@ -15,7 +15,7 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
 
 const list = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const cows = await Cow.find({}, { _id: 0, __v: 0 })
+    const cows = await Cow.find()
     res.status(200).json({ ok: true, data: cows })
   } catch (error) {
     console.log(error)
@@ -30,7 +30,7 @@ const find = async (req: Request, res: Response, next: NextFunction) => {
     if (cow === null) {
       return res.status(404).json({ ok: false, message: 'Cow not found' })
     }
-    res.status(200).json({ ok: true, cow })
+    res.status(200).json({ ok: true, data: cow })
   } catch (error) {
     console.log(error)
     res.status(500).json({ ok: false, message: 'Server error' })
@@ -38,4 +38,35 @@ const find = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-export { create, list, find }
+const update = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { id } = req.params
+    const changes = req.body
+    const updatedCow = await Cow.findByIdAndUpdate(id, changes)
+    if (updatedCow === null) {
+      return res.status(404).json({ ok: false, message: 'Cow not found' })
+    }
+    res.status(200).json({ ok: true, message: 'Cow updated' })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ ok: false, message: 'Server error' })
+    next()
+  }
+}
+
+const remove = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { id } = req.params
+    const updatedCow = await Cow.findByIdAndDelete(id)
+    if (updatedCow === null) {
+      return res.status(404).json({ ok: false, message: 'Cow not found' })
+    }
+    res.status(200).json({ ok: true, message: 'Cow deleted' })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ ok: false, message: 'Server error' })
+    next()
+  }
+}
+
+export { create, list, find, update, remove }

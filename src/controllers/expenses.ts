@@ -15,7 +15,7 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
 
 const list = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const expenses = await Expense.find({}, { _id: 0, __v: 0 })
+    const expenses = await Expense.find()
     res.status(200).json({ ok: true, data: expenses })
   } catch (error) {
     console.log(error)
@@ -30,7 +30,7 @@ const find = async (req: Request, res: Response, next: NextFunction) => {
     if (expense === null) {
       return res.status(404).json({ ok: false, message: 'Expense not found' })
     }
-    res.status(200).json({ ok: true, expense })
+    res.status(200).json({ ok: true, data: expense })
   } catch (error) {
     console.log(error)
     res.status(500).json({ ok: false, message: 'Server error' })

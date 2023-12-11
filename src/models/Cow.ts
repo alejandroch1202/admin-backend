@@ -11,11 +11,11 @@ const cowSchema = new Schema({
     trim: true,
     required: true
   },
-  purchase_weight: {
+  purchaseWeight: {
     type: Number,
     required: true
   },
-  purchase_price: {
+  purchasePrice: {
     type: Number,
     required: true
   }
