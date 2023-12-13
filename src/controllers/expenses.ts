@@ -38,4 +38,35 @@ const find = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-export { create, list, find }
+const update = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { id } = req.params
+    const changes = req.body
+    const updatedExpense = await Expense.findByIdAndUpdate(id, changes)
+    if (updatedExpense === null) {
+      return res.status(404).json({ ok: false, message: 'Expense not found' })
+    }
+    res.status(200).json({ ok: true, message: 'Expense updated' })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ ok: false, message: 'Server error' })
+    next()
+  }
+}
+
+const remove = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const { id } = req.params
+    const updatedExpense = await Expense.findByIdAndDelete(id)
+    if (updatedExpense === null) {
+      return res.status(404).json({ ok: false, message: 'Expense not found' })
+    }
+    res.status(200).json({ ok: true, message: 'Expense deleted' })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ ok: false, message: 'Server error' })
+    next()
+  }
+}
+
+export { create, list, find, update, remove }
