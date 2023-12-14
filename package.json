@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "db:insert": "ts-node src/db/seed.ts -i",
+    "db:remove": "ts-node src/db/seed.ts -r"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",

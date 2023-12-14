@@ -7,9 +7,21 @@ const cowSchema = new Schema(
       unique: true,
       required: true
     },
-    type: {
+    race: {
       type: String,
       trim: true,
+      required: true
+    },
+    currentWeight: {
+      type: Number,
+      required: true
+    },
+    age: {
+      type: Number,
+      required: true
+    },
+    purchaseDate: {
+      type: Date,
       required: true
     },
     purchaseWeight: {
@@ -19,6 +31,18 @@ const cowSchema = new Schema(
     purchasePrice: {
       type: Number,
       required: true
+    },
+    sellDate: {
+      type: Date,
+      default: null
+    },
+    sellWeight: {
+      type: Number,
+      default: null
+    },
+    sellPrice: {
+      type: Number,
+      default: null
     }
   },
   {
