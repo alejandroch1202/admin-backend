@@ -1,6 +1,7 @@
 import 'dotenv/config'
 import mongoose from 'mongoose'
 import Cow from './../models/Cow'
+import Expense from './../models/Expense'
 
 const url = process.env.MONGODB_URL
 
@@ -16,172 +17,136 @@ const insertData = async () => {
     await Cow.insertMany([
       {
         identifier: 1,
-        race: 'Rojo',
         currentWeight: 310,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 300,
-        purchasePrice: 1.28,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.28
       },
       {
         identifier: 2,
-        race: 'Negro',
         currentWeight: 230,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 220,
-        purchasePrice: 1.3,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.3
       },
       {
         identifier: 3,
-        race: 'Negro',
         currentWeight: 200,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 195,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 4,
-        race: 'Negro',
         currentWeight: 310,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 260,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 5,
-        race: 'Negro',
         currentWeight: 290,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 280,
-        purchasePrice: 1.3,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.3
       },
       {
         identifier: 6,
-        race: 'Negro',
         currentWeight: 220,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 195,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 7,
-        race: 'Negro',
         currentWeight: 370,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 350,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 8,
-        race: 'Rojo',
         currentWeight: 310,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 302,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 9,
-        race: 'Negro',
         currentWeight: 230,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 217,
-        purchasePrice: 1.3,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.3
       },
       {
         identifier: 10,
-        race: 'Negro',
         currentWeight: 200,
-        age: 20,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 186,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 11,
-        race: 'Rojo',
         currentWeight: 230,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 198,
-        purchasePrice: 1.3,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.3
       },
       {
         identifier: 12,
-        race: 'Rojo',
         currentWeight: 270,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 253,
-        purchasePrice: 1.25,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.25
       },
       {
         identifier: 13,
-        race: 'Rojo',
         currentWeight: 290,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 260,
-        purchasePrice: 1.28,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.28
       },
       {
         identifier: 14,
-        race: 'Rojo',
         currentWeight: 310,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 300,
-        purchasePrice: 1.28,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.28
       },
       {
         identifier: 15,
-        race: 'Rojo',
         currentWeight: 310,
-        age: 12,
-        purchaseDate: 1702515894750,
+        purchaseDate: 1702771200000,
         purchaseWeight: 300,
-        purchasePrice: 1.28,
-        createdAt: 1702515894750,
-        updatedAt: 1702515894750
+        purchasePrice: 1.28
       }
     ])
-    console.log('[db] Data sucessfully inserted')
 
+    await Expense.insertMany([
+      {
+        date: 1702771200000,
+        name: 'Recarga',
+        category: 'Gasolina',
+        cost: 20,
+        quantity: 1
+      },
+      {
+        date: 1702771200000,
+        name: 'Revisión del sistema de agua',
+        category: 'Otros',
+        cost: 40,
+        quantity: 1
+      },
+      {
+        date: 1702771200000,
+        name: 'Reparación del sistema de agua',
+        category: 'Otros',
+        cost: 40,
+        quantity: 1
+      }
+    ])
+
+    console.log('[db] Data sucessfully inserted')
     process.exit()
   } catch (error) {
     console.log('[db] There was an error inserting data')
@@ -194,7 +159,10 @@ const removeData = async () => {
   try {
     await mongoose.connect(url)
     console.log('[db] Sucessfully connected to MongoDB')
+
     await Cow.deleteMany({})
+    await Expense.deleteMany({})
+
     console.log('[db] Data sucessfully removed')
     process.exit()
   } catch (error) {
