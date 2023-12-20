@@ -3,7 +3,7 @@ import { Schema, model } from 'mongoose'
 const cowSchema = new Schema(
   {
     identifier: {
-      type: Number,
+      type: String,
       unique: true,
       required: true
     },

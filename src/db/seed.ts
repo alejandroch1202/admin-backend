@@ -16,105 +16,105 @@ const insertData = async () => {
 
     await Cow.insertMany([
       {
-        identifier: 1,
+        identifier: 'HST-0001',
         currentWeight: 310,
         purchaseDate: 1702771200000,
         purchaseWeight: 300,
         purchasePrice: 1.28
       },
       {
-        identifier: 2,
+        identifier: 'HST-0002',
         currentWeight: 230,
         purchaseDate: 1702771200000,
         purchaseWeight: 220,
         purchasePrice: 1.3
       },
       {
-        identifier: 3,
+        identifier: 'HST-0003',
         currentWeight: 200,
         purchaseDate: 1702771200000,
         purchaseWeight: 195,
         purchasePrice: 1.25
       },
       {
-        identifier: 4,
+        identifier: 'HST-0004',
         currentWeight: 310,
         purchaseDate: 1702771200000,
         purchaseWeight: 260,
         purchasePrice: 1.25
       },
       {
-        identifier: 5,
+        identifier: 'HST-0005',
         currentWeight: 290,
         purchaseDate: 1702771200000,
         purchaseWeight: 280,
         purchasePrice: 1.3
       },
       {
-        identifier: 6,
+        identifier: 'HST-0006',
         currentWeight: 220,
         purchaseDate: 1702771200000,
         purchaseWeight: 195,
         purchasePrice: 1.25
       },
       {
-        identifier: 7,
+        identifier: 'HST-0007',
         currentWeight: 370,
         purchaseDate: 1702771200000,
         purchaseWeight: 350,
         purchasePrice: 1.25
       },
       {
-        identifier: 8,
+        identifier: 'HST-0008',
         currentWeight: 310,
         purchaseDate: 1702771200000,
         purchaseWeight: 302,
         purchasePrice: 1.25
       },
       {
-        identifier: 9,
+        identifier: 'HST-0009',
         currentWeight: 230,
         purchaseDate: 1702771200000,
         purchaseWeight: 217,
         purchasePrice: 1.3
       },
       {
-        identifier: 10,
+        identifier: 'HST-0010',
         currentWeight: 200,
         purchaseDate: 1702771200000,
         purchaseWeight: 186,
         purchasePrice: 1.25
       },
       {
-        identifier: 11,
+        identifier: 'HST-0012',
         currentWeight: 230,
         purchaseDate: 1702771200000,
         purchaseWeight: 198,
         purchasePrice: 1.3
       },
       {
-        identifier: 12,
+        identifier: 'HST-0013',
         currentWeight: 270,
         purchaseDate: 1702771200000,
         purchaseWeight: 253,
         purchasePrice: 1.25
       },
       {
-        identifier: 13,
+        identifier: 'HST-0014',
         currentWeight: 290,
         purchaseDate: 1702771200000,
         purchaseWeight: 260,
         purchasePrice: 1.28
       },
       {
-        identifier: 14,
+        identifier: 'HST-0015',
         currentWeight: 310,
         purchaseDate: 1702771200000,
         purchaseWeight: 300,
         purchasePrice: 1.28
       },
       {
-        identifier: 15,
+        identifier: 'HST-0016',
         currentWeight: 310,
         purchaseDate: 1702771200000,
         purchaseWeight: 300,
