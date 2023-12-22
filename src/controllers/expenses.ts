@@ -1,5 +1,6 @@
 import type { Request, Response, NextFunction } from 'express'
 import Expense from './../models/Expense'
+import Category from './../models/Category'
 
 const create = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -69,4 +70,35 @@ const remove = async (req: Request, res: Response, next: NextFunction) => {
   }
 }
 
-export { create, list, find, update, remove }
+const createCategory = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const expense = new Category(req.body)
+    await expense.save()
+    res.status(201).json({ ok: true, message: 'Category created' })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ ok: false, message: 'Server error' })
+    next()
+  }
+}
+
+const listCategories = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const categories = await Category.find()
+    res.status(200).json({ ok: true, data: categories })
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ ok: false, message: 'Server error' })
+    next()
+  }
+}
+
+export { create, list, find, update, remove, createCategory, listCategories }
