@@ -2,6 +2,7 @@ import 'dotenv/config'
 import mongoose from 'mongoose'
 import Cow from './../models/Cow'
 import Expense from './../models/Expense'
+import Category from '../models/Category'
 
 const url = process.env.MONGODB_URL
 
@@ -16,133 +17,148 @@ const insertData = async () => {
 
     await Cow.insertMany([
       {
-        identifier: 'HST-0001',
-        currentWeight: 310,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 300,
-        purchasePrice: 1.28
+        date: 1702771200000,
+        code: 'HST-0001',
+        initialWeight: 300,
+        purchasePrice: 1.28,
+        currentWeight: 310
       },
       {
-        identifier: 'HST-0002',
-        currentWeight: 230,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 220,
-        purchasePrice: 1.3
+        date: 1702771200000,
+        code: 'HST-0002',
+        initialWeight: 220,
+        purchasePrice: 1.3,
+        currentWeight: 230
       },
       {
-        identifier: 'HST-0003',
-        currentWeight: 200,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 195,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0003',
+        initialWeight: 195,
+        purchasePrice: 1.25,
+        currentWeight: 200
       },
       {
-        identifier: 'HST-0004',
-        currentWeight: 310,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 260,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0004',
+        initialWeight: 260,
+        purchasePrice: 1.25,
+        currentWeight: 310
       },
       {
-        identifier: 'HST-0005',
-        currentWeight: 290,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 280,
-        purchasePrice: 1.3
+        date: 1702771200000,
+        code: 'HST-0005',
+        initialWeight: 280,
+        purchasePrice: 1.3,
+        currentWeight: 290
       },
       {
-        identifier: 'HST-0006',
-        currentWeight: 220,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 195,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0006',
+        initialWeight: 195,
+        purchasePrice: 1.25,
+        currentWeight: 220
       },
       {
-        identifier: 'HST-0007',
-        currentWeight: 370,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 350,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0007',
+        initialWeight: 350,
+        purchasePrice: 1.25,
+        currentWeight: 370
       },
       {
-        identifier: 'HST-0008',
-        currentWeight: 310,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 302,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0008',
+        initialWeight: 302,
+        purchasePrice: 1.25,
+        currentWeight: 310
       },
       {
-        identifier: 'HST-0009',
-        currentWeight: 230,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 217,
-        purchasePrice: 1.3
+        date: 1702771200000,
+        code: 'HST-0009',
+        initialWeight: 217,
+        purchasePrice: 1.3,
+        currentWeight: 230
       },
       {
-        identifier: 'HST-0010',
-        currentWeight: 200,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 186,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0010',
+        initialWeight: 186,
+        purchasePrice: 1.25,
+        currentWeight: 200
       },
       {
-        identifier: 'HST-0012',
-        currentWeight: 230,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 198,
-        purchasePrice: 1.3
+        date: 1702771200000,
+        code: 'HST-0011',
+        initialWeight: 198,
+        purchasePrice: 1.3,
+        currentWeight: 230
       },
       {
-        identifier: 'HST-0013',
-        currentWeight: 270,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 253,
-        purchasePrice: 1.25
+        date: 1702771200000,
+        code: 'HST-0012',
+        initialWeight: 253,
+        purchasePrice: 1.25,
+        currentWeight: 270
       },
       {
-        identifier: 'HST-0014',
-        currentWeight: 290,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 260,
-        purchasePrice: 1.28
+        date: 1702771200000,
+        code: 'HST-0013',
+        initialWeight: 260,
+        purchasePrice: 1.28,
+        currentWeight: 290
       },
       {
-        identifier: 'HST-0015',
-        currentWeight: 310,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 300,
-        purchasePrice: 1.28
+        date: 1702771200000,
+        code: 'HST-0014',
+        initialWeight: 300,
+        purchasePrice: 1.28,
+        currentWeight: 310
       },
       {
-        identifier: 'HST-0016',
-        currentWeight: 310,
-        purchaseDate: 1702771200000,
-        purchaseWeight: 300,
-        purchasePrice: 1.28
+        date: 1702771200000,
+        code: 'HST-0015',
+        initialWeight: 300,
+        purchasePrice: 1.28,
+        currentWeight: 310
       }
     ])
 
     await Expense.insertMany([
       {
         date: 1702771200000,
-        name: 'Recarga',
-        category: 'Gasolina',
+        category: 'Transporte',
+        description: 'Recarga de gasolina',
         cost: 20,
         quantity: 1
       },
       {
         date: 1702771200000,
-        name: 'Revisión del sistema de agua',
-        category: 'Otros',
+        category: 'Imprevistos',
+        description: 'Revisión del sistema de agua',
         cost: 40,
         quantity: 1
       },
       {
         date: 1702771200000,
-        name: 'Reparación del sistema de agua',
-        category: 'Otros',
+        category: 'Imprevistos',
+        description: 'Reparación del sistema de agua',
         cost: 40,
         quantity: 1
+      }
+    ])
+
+    await Category.insertMany([
+      {
+        name: 'Medicinas'
+      },
+      {
+        name: 'Transporte'
+      },
+      {
+        name: 'Alimentos'
+      },
+      {
+        name: 'Imprevistos'
       }
     ])
 
@@ -162,6 +178,7 @@ const removeData = async () => {
 
     await Cow.deleteMany({})
     await Expense.deleteMany({})
+    await Category.deleteMany({})
 
     console.log('[db] Data sucessfully removed')
     process.exit()

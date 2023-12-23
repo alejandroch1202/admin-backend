@@ -6,14 +6,13 @@ const expenseSchema = new Schema(
       type: Date,
       required: true
     },
-    name: {
+    category: {
       type: String,
       trim: true,
       required: true
     },
-    category: {
+    description: {
       type: String,
-      trim: true,
       required: true
     },
     cost: {

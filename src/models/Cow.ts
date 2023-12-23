@@ -2,16 +2,16 @@ import { Schema, model } from 'mongoose'
 
 const cowSchema = new Schema(
   {
-    identifier: {
+    date: {
+      type: Date,
+      required: true
+    },
+    code: {
       type: String,
       unique: true,
       required: true
     },
-    purchaseDate: {
-      type: Date,
-      required: true
-    },
-    purchaseWeight: {
+    initialWeight: {
       type: Number,
       required: true
     },
