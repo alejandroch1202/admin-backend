@@ -1,7 +1,19 @@
 import { Router } from 'express'
-import { create, list, find, update, remove } from './../controllers/expenses'
+import {
+  create,
+  list,
+  find,
+  update,
+  remove,
+  createCategory,
+  listCategories
+} from './../controllers/expenses'
 
 const router = Router()
+
+router.post('/categories', createCategory)
+
+router.get('/categories', listCategories)
 
 router.post('/', create)
 

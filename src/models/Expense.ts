@@ -2,14 +2,17 @@ import { Schema, model } from 'mongoose'
 
 const expenseSchema = new Schema(
   {
-    name: {
-      type: String,
-      trim: true,
+    date: {
+      type: Date,
       required: true
     },
     category: {
       type: String,
       trim: true,
+      required: true
+    },
+    description: {
+      type: String,
       required: true
     },
     cost: {
